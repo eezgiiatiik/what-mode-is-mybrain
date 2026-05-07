@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lumiere Wellness | The Quiz</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#fbb3c1",
+                        "on-surface": "#1b1c17",
+                        "surface-variant": "#e4e3db",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#001f23",
+                        "on-background": "#1b1c17",
+                        "on-secondary-fixed": "#410004",
+                        "error-container": "#ffdad6",
+                        "outline": "#837375",
+                        "inverse-on-surface": "#f3f1e9",
+                        "outline-variant": "#d6c2c4",
+                        "surface-bright": "#fbf9f1",
+                        "surface-container": "#f0eee6",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#fffbff",
+                        "background": "#fbf9f1",
+                        "surface-dim": "#dcdad2",
+                        "primary": "#864e5a",
+                        "tertiary-fixed-dim": "#9fcfd5",
+                        "on-primary-fixed-variant": "#6b3743",
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#30312c",
+                        "surface-container-high": "#eae8e0",
+                        "on-secondary-fixed-variant": "#930014",
+                        "secondary-fixed": "#ffdad7",
+                        "primary-container": "#ffb7c5",
+                        "tertiary-fixed": "#bbebf1",
+                        "on-tertiary-fixed-variant": "#1d4d53",
+                        "on-surface-variant": "#514345",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#db3237",
+                        "surface-container-highest": "#e4e3db",
+                        "on-tertiary-container": "#2d5c61",
+                        "surface-container-low": "#f5f4ec",
+                        "secondary-fixed-dim": "#ffb3ae",
+                        "inverse-primary": "#fbb3c1",
+                        "primary-fixed": "#ffd9df",
+                        "on-primary-container": "#7b4551",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#864e5a",
+                        "tertiary": "#37656b",
+                        "tertiary-container": "#a3d3d9",
+                        "surface": "#fbf9f1",
+                        "secondary": "#b71422",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#360c19"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "stack-lg": "48px",
+                        "margin-desktop": "64px",
+                        "container-max": "1280px",
+                        "margin-mobile": "20px",
+                        "stack-sm": "12px",
+                        "stack-md": "24px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-caps": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "h3": ["Epilogue"],
+                        "h1": ["Epilogue"],
+                        "h2": ["Epilogue"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "h3": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "h1": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "h2": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .neo-shadow {
+            box-shadow: 6px 6px 0px 0px #360c19;
+        }
+        .neo-shadow-sm {
+            box-shadow: 4px 4px 0px 0px #360c19;
+        }
+        .soft-shadow {
+            box-shadow: 0 10px 25px -5px rgba(134, 78, 90, 0.1), 0 8px 10px -6px rgba(134, 78, 90, 0.1);
+        }
+        .star-shape {
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+        .rotate-2 { transform: rotate(2deg); }
+        .rotate-n2 { transform: rotate(-2deg); }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- Decorative Background Elements -->
+<div class="fixed inset-0 pointer-events-none z-0">
+<div class="absolute top-20 left-10 w-64 h-64 bg-primary-fixed-dim rounded-full opacity-20 blur-3xl"></div>
+<div class="absolute bottom-20 right-10 w-96 h-96 bg-tertiary-fixed-dim rounded-full opacity-20 blur-3xl"></div>
+<!-- Floating Text -->
+<span class="absolute top-[15%] right-[10%] font-h3 text-primary opacity-30 select-none hidden md:block">focus</span>
+<span class="absolute bottom-[20%] left-[5%] font-h3 text-secondary opacity-30 select-none hidden md:block rotate-n2">energy</span>
+<span class="absolute top-[40%] left-[2%] font-h3 text-tertiary opacity-30 select-none hidden md:block rotate-2">burnout</span>
+<span class="absolute bottom-[10%] right-[15%] font-h3 text-on-surface-variant opacity-30 select-none hidden md:block">overthinking</span>
+<!-- Retro Stars -->
+<div class="absolute top-40 left-[20%] w-12 h-12 bg-secondary opacity-20 star-shape animate-pulse"></div>
+<div class="absolute bottom-60 right-[25%] w-16 h-16 bg-primary opacity-20 star-shape"></div>
+</div>
+<!-- Header / TopAppBar -->
+<header class="relative z-50 w-full top-0 bg-transparent">
+<div class="flex justify-between items-center w-full px-margin-desktop py-gutter max-w-container-max mx-auto">
+<a class="font-h2 text-h2 font-bold text-secondary dark:text-secondary-fixed-dim" href="#">Lumiere Wellness</a>
+<nav class="hidden md:flex items-center space-x-stack-md">
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-300" href="#">Journal</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="#">The Quiz</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-300" href="#">Library</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-300" href="#">Rituals</a>
+</nav>
+<button class="bg-secondary text-on-secondary px-stack-md py-stack-sm rounded-xl font-bold neo-shadow-sm active:scale-95 transition-transform">
+                Subscribe
+            </button>
+</div>
+</header>
+<main class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg">
+<!-- Hero Section -->
+<section class="text-center mb-stack-lg flex flex-col items-center">
+<span class="font-label-caps text-label-caps text-primary border border-primary px-stack-sm py-1 rounded-full mb-stack-sm">Editorial Feature</span>
+<h1 class="font-h1 text-h1 text-on-background mb-stack-sm max-w-4xl">Find your inner <span class="text-secondary italic">lumiere</span> today.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                A curated path to clarity. Answer a few brief questions to unlock your personalized wellness ritual for the upcoming season.
+            </p>
+</section>
+<!-- Quiz Bento Container -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-stack-md items-start">
+<!-- Side Image Decoration (Magazine Style) -->
+<div class="hidden lg:block lg:col-span-3 space-y-stack-md pt-20">
+<div class="border border-on-background p-2 rounded-xl bg-surface-container rotate-n2 neo-shadow-sm overflow-hidden">
+<img alt="Overthinking and Burnout collage" class="rounded-lg object-cover h-64 w-full" data-alt="Abstract modern collage graphic representing 'overthinking' and 'burnout', soft pastel pink and cream palette, surreal elements like floating geometric shapes and brain-inspired outlines, retro Y2K aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzGznd3QqGlJP2Lp6LOucW3fwRuvFlX6RiYBfnUeOf76OnTB0g2abvMSQAhtETyysdaA9Ix51DyWP3PdPJYQzWqIagVx2gKu0DatLdSapyrHPmxix7VRxP0g_t5NWBkV9Vla2HS-q4SoOFAoE4hwKsXjO9MncWquRPuJCWAXzi4Pvy0LCQI0miSvAWQVUmhW7oBN-88g1GLTh04ikQZ0Z3_WcFh7GSjejnkb2Q8rPiInqOfCS4cNXir6Esq2-nKuIrHbZxH-01bEAE"/>
+</div>
+<div class="p-stack-md bg-primary-container rounded-xl border border-on-background rotate-2">
+<p class="font-h3 text-primary text-h3">"Self-care is not a luxury, it's a necessity."</p>
+</div>
+</div>
+<!-- Central Quiz Card -->
+<div class="lg:col-span-6">
+<div class="bg-surface-container-lowest border border-on-background p-stack-md md:p-stack-lg rounded-[2.5rem] neo-shadow relative">
+<div class="absolute -top-6 -right-6 w-20 h-20 bg-secondary-container rounded-full flex items-center justify-center border border-on-background animate-bounce">
+<span class="material-symbols-outlined text-on-secondary text-3xl">psychology</span>
+</div>
+<div class="mb-stack-md">
+<h2 class="font-h2 text-h3 text-on-background mb-2">The Wellness Audit</h2>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-1/3"></div>
+</div>
+</div>
+<!-- Question 1 -->
+<div class="space-y-stack-md mb-stack-lg">
+<label class="block font-h3 text-h3 text-on-surface-variant">How are you feeling right now?</label>
+<div class="relative group">
+<select class="w-full appearance-none bg-surface-container-low border border-on-background rounded-xl p-stack-md font-body-lg text-on-background focus:ring-2 focus:ring-secondary focus:outline-none transition-all">
+<option>Select an emotion...</option>
+<option>A bit overwhelmed</option>
+<option>Creative and energetic</option>
+<option>Calm and centered</option>
+<option>Tired and seeking rest</option>
+</select>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Question 2 -->
+<div class="space-y-stack-md mb-stack-lg">
+<label class="block font-h3 text-h3 text-on-surface-variant">Where is your focus currently?</label>
+<div class="grid grid-cols-2 gap-stack-sm">
+<button class="flex flex-col items-center justify-center p-stack-md border border-on-background rounded-xl bg-white hover:bg-primary-container transition-colors group">
+<span class="material-symbols-outlined text-4xl mb-2 text-primary">work_outline</span>
+<span class="font-bold">Career</span>
+</button>
+<button class="flex flex-col items-center justify-center p-stack-md border-2 border-secondary rounded-xl bg-secondary-fixed text-on-secondary-fixed transition-colors">
+<span class="material-symbols-outlined text-4xl mb-2">favorite</span>
+<span class="font-bold">Relationships</span>
+</button>
+<button class="flex flex-col items-center justify-center p-stack-md border border-on-background rounded-xl bg-white hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-4xl mb-2 text-primary">self_improvement</span>
+<span class="font-bold">Inner Peace</span>
+</button>
+<button class="flex flex-col items-center justify-center p-stack-md border border-on-background rounded-xl bg-white hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-4xl mb-2 text-primary">auto_awesome</span>
+<span class="font-bold">Creativity</span>
+</button>
+</div>
+</div>
+<button class="w-full bg-secondary text-on-secondary font-h3 py-stack-md rounded-2xl neo-shadow-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all duration-200">
+                        Reveal My Ritual
+                    </button>
+</div>
+</div>
+<!-- Right Column Features -->
+<div class="lg:col-span-3 space-y-stack-md">
+<div class="p-stack-md bg-tertiary-container border border-on-background rounded-xl neo-shadow-sm">
+<span class="material-symbols-outlined text-3xl mb-stack-sm text-on-tertiary-container">auto_stories</span>
+<h4 class="font-h3 text-on-tertiary-container mb-2">Weekly Edit</h4>
+<p class="font-body-md text-on-tertiary-container">Explore this week's curated reading on mindfulness and modern rest.</p>
+</div>
+<div class="relative group">
+<div class="bg-on-surface h-64 w-full rounded-xl overflow-hidden border border-on-background">
+<img alt="Candlelight" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A macro shot of a flickering candle flame in a ceramic holder on a wooden table. The surrounding environment is dim and cozy, with soft light illuminating the texture of the wood and the warm glow of the wax. The photography style is high-end editorial, utilizing a warm, moody color palette of ambers and soft shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_V1aGgyhP-PP_yBDhEg5k9x6IG9A0Ful6gBTka7b5cgds61TssEe_2j8pYBAGFN_XXnyvgUTVxvfeZ4xmzEujcldySbBUtqpiLETUQgPz6lPjaVJ1BWpGimDBuwXR1qsrv8hApBGrXeI6p_EQxO88fDWF_ZUYjWwm0Ydy5eqllL8tM2xFfwI2Q11BXUbJBjXhWTcufNz_qU4UOsOfMX-R2oBhZUIwb1bI_iWDReE05oGFg6OmxuQLXgzKWjIPMbSw_kRDfeq9fQFE"/>
+</div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-on-surface/40 rounded-xl">
+<span class="text-white font-bold tracking-widest uppercase">Moodboard</span>
+</div>
+</div>
+<div class="p-stack-md bg-surface-container-high border border-on-background rounded-xl">
+<h4 class="font-label-caps text-secondary mb-2">Community Note</h4>
+<p class="font-body-md italic">"Since taking the quiz, my morning routine feels like a ritual rather than a chore." — Elena P.</p>
+</div>
+</div>
+</div>
+<!-- Recommendation Teaser (Appears after interaction - simulated here) -->
+<section class="mt-stack-lg pt-stack-lg border-t border-outline-variant">
+<h2 class="font-h2 text-h2 text-center mb-stack-md">Top Rituals This Month</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-stack-md">
+<!-- Card 1 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] rounded-2xl overflow-hidden mb-4 border border-on-background neo-shadow-sm group-hover:neo-shadow transition-all">
+<img alt="İzmir Student Life" class="w-full h-full object-cover" data-alt="An overhead view of a luxurious bathtub filled with rose petals and soft bubbles. A wooden tray holds a cup of herbal tea and a small book. The lighting is ethereal and soft, reflecting a serene and pampered aesthetic. The color palette features creamy whites, soft pinks, and warm wood tones, consistent with a high-end lifestyle brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpGRSTCjsyT_E1NBhjF987Xn4TeUouv0Kh8bQMOB1KHSFcehBH6WtQNcgBLzIAxZZ4gtykMGJAX_S6gyd-aSr-HrbJrFNgHWZ_w-klngGYexRpxjmFOjkPawEeCnED1TWA8prTIHWDCuP29zqd_bZjpbS_9PJwK-PmCQFC_tCAC4yIQQvSdyBdZpEz0Aav936lip6MVhogmfO2AaxTHygh0OHJSRroGtoQcTQRGHJH0guEffC9WkhsbSEcTnHjMYZzLk7Kkew_Yscy"/>
+<div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border border-on-background">Restoration</div>
+</div>
+<h3 class="font-h3 text-h3 group-hover:text-secondary transition-colors">Urban Student Life</h3>
+<p class="font-body-md text-on-surface-variant">Candid cafe moments and nostalgic city vibes.</p>
+</div>
+<!-- Card 2 -->
+<div class="group cursor-pointer translate-y-8">
+<div class="relative aspect-[3/4] rounded-2xl overflow-hidden mb-4 border border-on-background neo-shadow-sm group-hover:neo-shadow transition-all">
+<img alt="İzmir Sunset Meditation" class="w-full h-full object-cover" data-alt="A person sitting in a peaceful meditative pose on a light-colored woven mat. The background is a minimalist room with a single large plant and a large window letting in diffused morning light. The overall mood is quiet and focused, with a clean and airy visual style dominated by cream, sage, and soft earth tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWUJCsuiLVeqwBEzvwUu180eE5zcs6EDI-zYY_EU1Da5IEbqqqLph1rKYt4VeAZLDAsm1vmMoE5HISm5iOGGQFVCOD90NEPm0X8PHiXokoQymMyr26apDKHDvMtJjtUe6lHXshoPg1LFgWlq5xNCLICXuIQFO48XDLFPBfpP3Isg5BaWlKJ8psmc8j7934AOUERwnclkhUx3jAPXBOkM4fmPqpkSOuVPoVtZc4WHDj_ZOW4U-RpJye9fcVnkNPB9yqO4RdVGJHK4IQ"/>
+<div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border border-on-background">Focus</div>
+</div>
+<h3 class="font-h3 text-h3 group-hover:text-secondary transition-colors">Quiet Meditations</h3>
+<p class="font-body-md text-on-surface-variant">Reflective seaside moments at golden hour.</p>
+</div>
+<!-- Card 3 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] rounded-2xl overflow-hidden mb-4 border border-on-background neo-shadow-sm group-hover:neo-shadow transition-all">
+<img alt="Emotional Energy Flow" class="w-full h-full object-cover" data-alt="A vibrantly colored healthy grain bowl with avocado, radishes, and fresh greens, served on a handmade ceramic plate. The plate sits on a linen tablecloth in a soft pink shade. The lighting is bright and natural, highlighting the fresh textures of the food. The aesthetic is modern, joyful, and health-conscious, with a palette of greens, pinks, and whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJeBCRsf9FMDytcSleQtle-lGwrrmkg5cnO0hjgRwuR52606CEsLXQEV-iMJrKzaRQEhIaDiVPjXMCDUvkAtZDgQHwtAzKpLEpDb8wC-uHHHuLHVNq52BMVF7g6lpOaURJMq-WXkhCVe_1uOapBjRWwRxR7eC4012xrfrhgcIWyc02QUYcGCWbMs5hYE48jHIqaLk6H7j8RLR-EhZCuamXuXwpgfS0oW4NO3thmTL5yxD2-qCxu2UgMhoDrSjWhWN6xPLEYFbw6yjs"/>
+<div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border border-on-background">Energy</div>
+</div>
+<h3 class="font-h3 text-h3 group-hover:text-secondary transition-colors">Inner Energy Flow</h3>
+<p class="font-body-md text-on-surface-variant">Visualize and harness your creative spirit.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-xl bg-surface-container-low dark:bg-surface-dim border-t border-outline-variant mt-stack-lg">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-desktop py-stack-lg max-w-container-max mx-auto gap-stack-md">
+<div class="flex flex-col items-center md:items-start">
+<span class="font-h3 text-h3 font-bold text-secondary dark:text-secondary-fixed-dim">Lumiere Wellness</span>
+<p class="font-body-md text-on-surface-variant mt-2 text-center md:text-left">© 2024 Lumiere Wellness. Cultivating inner clarity through curated rituals.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-stack-md">
+<a class="text-on-surface-variant hover:text-secondary transition-all font-body-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-secondary transition-all font-body-md" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-secondary transition-all font-body-md" href="#">Contact Us</a>
+<a class="text-on-surface-variant hover:text-secondary transition-all font-body-md" href="#">Press Kit</a>
+</div>
+</div>
+</footer>
+</body></html>
